@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compost Partner Dashboard | GreenServe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #fefce8, #ecfdf5);
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="p-6 text-gray-700">
+
+  <!-- Header -->
+  <div class="mb-6 fade-in">
+    <h1 class="text-3xl font-extrabold text-green-700">Compost Partner Dashboard</h1>
+    
+  </div>
+
+  <!-- Food Pickup Management -->
+  <div class="bg-white shadow-lg rounded-lg p-6 mb-8 fade-in">
+    <h2 class="text-xl font-semibold text-green-600 mb-4">Food Pickup Schedule</h2>
+
+    <div class="bg-yellow-100 p-4 rounded-md mb-4">
+      <p><strong>Food:</strong> Banana Peels (50 kg)</p>
+      <p><strong>Pickup Location:</strong> Green Meadows, Ahmedabad</p>
+      <p><strong>Pickup Time:</strong> 3:00 PM, Today</p>
+      <p><strong>Status:</strong> Pickup Pending</p>
+      <button class="bg-green-600 text-white px-4 py-2 rounded mt-3 hover:bg-green-700">Mark as Picked Up</button>
+    </div>
+  </div>
+
+  <!-- Batch Creation for Organic Fertilizer -->
+  <div class="bg-white shadow-xl p-6 rounded-lg fade-in mb-6">
+    <h2 class="text-xl font-semibold text-green-600 mb-4">Create Organic Fertilizer</h2>
+    <p class="text-gray-500">Turn this month’s food waste into rich, organic fertilizer. 🌱</p>
+    <div class="mt-3">
+      <button class="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700">Start New Batch</button>
+    </div>
+  </div>
+
+  <!-- Impact Stats -->
+  <div class="grid grid-cols-2 gap-4 fade-in">
+    <div class="bg-green-100 p-4 rounded-lg text-center">
+      <h3 class="text-2xl font-bold text-green-700">2,000</h3>
+      <p class="text-sm text-gray-500">Kg of Food Transformed</p>
+    </div>
+    <div class="bg-green-100 p-4 rounded-lg text-center">
+      <h3 class="text-2xl font-bold text-green-700">100</h3>
+      <p class="text-sm text-gray-500">Batches of Fertilizer Created</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <p class="mt-10 text-center text-sm italic text-gray-500 fade-in">
+    "Transform waste into growth. 🌱"
+  </p>
+
+</body>
+</html>

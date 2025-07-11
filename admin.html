@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard | GreenServe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #fefce8, #ecfdf5);
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="p-6 text-gray-700">
+
+  <!-- Header -->
+  <div class="mb-6 fade-in">
+    <h1 class="text-3xl font-extrabold text-green-700">Admin Dashboard</h1>
+    
+  </div>
+
+  <!-- User Management Section -->
+  <div class="bg-white shadow-lg rounded-lg p-6 mb-8 fade-in">
+    <h2 class="text-xl font-semibold text-green-600 mb-4">Manage Users</h2>
+
+    <div class="bg-gray-100 p-4 rounded-md mb-4">
+      <p><strong>Donor:</strong> The Great Café</p>
+      <p><strong>Status:</strong> Active</p>
+      <div class="mt-3 flex gap-3">
+        <button class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Deactivate</button>
+        <button class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Delete</button>
+      </div>
+    </div>
+
+    <!-- More Users can be listed here -->
+  </div>
+
+  <!-- Donation Statistics Section -->
+  <div class="bg-white shadow-md p-6 rounded-lg fade-in mb-6">
+    <h2 class="text-lg font-semibold text-green-700 mb-3">Donation Stats</h2>
+
+    <!-- Impact Charts -->
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-green-100 p-4 rounded-lg text-center">
+        <h3 class="text-2xl font-bold text-green-700">500</h3>
+        <p class="text-sm text-gray-500">Total Donations</p>
+      </div>
+      <div class="bg-green-100 p-4 rounded-lg text-center">
+        <h3 class="text-2xl font-bold text-green-700">1,000</h3>
+        <p class="text-sm text-gray-500">Meals Served</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Food Waste Reduction -->
+  <div class="bg-white shadow-xl p-6 rounded-lg fade-in mb-6">
+    <h2 class="text-xl font-semibold text-green-600 mb-4">Food Waste Reduced</h2>
+    <p class="text-gray-500">You have successfully reduced 2,000 kg of food waste this month by connecting donors to NGOs!</p>
+  </div>
+
+  <!-- Footer Quote -->
+  <p class="mt-10 text-center text-sm italic text-gray-500 fade-in">
+    "Small actions lead to big changes." 🌿
+  </p>
+
+</body>
+</html>

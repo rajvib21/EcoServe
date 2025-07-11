@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Impact Dashboard | FeedCycle</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #fefce8, #ecfdf5);
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .info-box {
+      border: 1px solid #D1D5DB;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: #f9fafb;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .info-box:hover {
+      background-color: #e4e4e7;
+    }
+
+    .chart-container {
+      width: 50%;
+      margin: auto;
+    }
+  </style>
+</head>
+<body class="p-6 text-gray-700">
+
+  <!-- Header -->
+  <div class="mb-6 fade-in">
+    <h1 class="text-3xl font-extrabold text-green-700">Impact Dashboard</h1>
+   
+  </div>
+
+  <!-- Impact Overview -->
+  <div class="bg-white shadow-lg rounded-lg p-6 mb-8 fade-in">
+    <h2 class="text-xl font-semibold text-green-600 mb-4">Impact Overview</h2>
+
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-green-100 p-4 rounded-lg text-center">
+        <h3 class="text-2xl font-bold text-green-700">1,000</h3>
+        <p class="text-sm text-gray-500">Meals Served</p>
+      </div>
+      <div class="bg-green-100 p-4 rounded-lg text-center">
+        <h3 class="text-2xl font-bold text-green-700">500 kg</h3>
+        <p class="text-sm text-gray-500">Food Saved</p>
+      </div>
+      <div class="bg-green-100 p-4 rounded-lg text-center">
+        <h3 class="text-2xl font-bold text-green-700">200</h3>
+        <p class="text-sm text-gray-500">Kg of Organic Fertilizer Created</p>
+      </div>
+      <div class="bg-green-100 p-4 rounded-lg text-center">
+        <h3 class="text-2xl font-bold text-green-700">150 kg</h3>
+        <p class="text-sm text-gray-500">Plastic Saved</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie Chart for Food Waste Reduction -->
+  <div class="bg-white shadow-md rounded-lg p-6 mb-8 fade-in">
+    <h2 class="text-xl font-semibold text-green-600 mb-4">Food Waste Reduction</h2>
+    <div class="chart-container">
+      <canvas id="foodWasteChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Info on Degradation, Food Quality, and Fertilizer -->
+  <div class="bg-white shadow-lg p-6 rounded-lg mb-8 fade-in">
+    <h2 class="text-xl font-semibold text-green-600 mb-4">How Your Efforts Help</h2>
+    <div class="grid grid-cols-3 gap-4">
+      <!-- Degradation -->
+      <div class="info-box">
+        <h3 class="text-lg font-semibold text-green-700">Degradation of Food Waste</h3>
+        <p class="text-sm text-gray-500">Your donated food prevents waste from entering landfills, and it’s turned into compost to enrich the soil!</p>
+      </div>
+      <!-- Quality Verification -->
+      <div class="info-box">
+        <h3 class="text-lg font-semibold text-green-700">Food Quality Verification</h3>
+        <p class="text-sm text-gray-500">We ensure that all food donations are quality checked before distribution to avoid any health hazards.</p>
+      </div>
+      <!-- Organic Fertilizer Creation -->
+      <div class="info-box">
+        <h3 class="text-lg font-semibold text-green-700">Food to Organic Fertilizer</h3>
+        <p class="text-sm text-gray-500">Food waste that cannot be donated is processed into organic fertilizer, closing the sustainability loop!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Quote -->
+  <p class="mt-10 text-center text-sm italic text-gray-500 fade-in">
+    "Together, we’re saving food, saving lives, and saving the planet." 🌍
+  </p>
+
+  <!-- Script for Pie Chart -->
+  <script>
+    const ctx = document.getElementById('foodWasteChart').getContext('2d');
+    const foodWasteChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Food Saved', 'Food Wasted', 'Plastic Avoided'],
+        datasets: [{
+          label: 'Food Waste Reduction',
+          data: [500, 200, 150],
+          backgroundColor: ['#34D399', '#F87171', '#60A5FA'],
+          borderColor: ['#34D399', '#F87171', '#60A5FA'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          tooltip: {
+            callbacks: {
+              label: function(tooltipItem) {
+                return tooltipItem.label + ': ' + tooltipItem.raw + ' kg';
+              }
+            }
+          }
+        },
+        maintainAspectRatio: false,
+        aspectRatio: 1.5
+      }
+    });
+  </script>
+
+</body>
+</html>
